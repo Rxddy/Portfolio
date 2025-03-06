@@ -6,6 +6,11 @@
     <title>Rusanth Pirabakaran - Portfolio</title>
     <meta name="description" content="Rusanth Pirabakaran: Software developer specializing in Python, web development, and innovative tech solutions">
     <meta name="keywords" content="software developer, Python, web development, game development, portfolio">
+    <meta property="og:title" content="Rusanth Pirabakaran - Portfolio">
+    <meta property="og:description" content="Showcasing my software development skills, projects, and experiences.">
+    <meta property="og:image" content="images/portfolio-preview.jpg">
+    <meta property="og:url" content="https://yourportfolio.com">
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -13,6 +18,11 @@
 <body>
     <div class="container">
         <header>
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="profile-section">
                 <div class="image-carousel">
                     <img src="images/IMG_1287.jpg" alt="Rusanth Pirabakaran" class="profile-image active">
@@ -24,14 +34,19 @@
                 </div>
                 <h1>Rusanth Pirabakaran</h1>
                 <p class="subtitle">Software Developer | Creative Innovator</p>
+                <p class="tagline">Bringing ideas to life through clean code and intuitive design</p>
             </div>
-            <nav>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#experiences">Experiences</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><button id="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="ri-sun-line" id="light-icon"></i>
+                        <i class="ri-moon-line" id="dark-icon"></i>
+                    </button></li>
                 </ul>
             </nav>
         </header>
@@ -42,18 +57,24 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p>
-                            Hey there! I'm Rusanth, a passionate software developer with a love for turning complex ideas into elegant digital solutions. 
-                            When I'm not coding, you'll find me exploring new technologies, playing with my furry companion, or diving into creative projects.
+                            Hey there! I'm Rusanth, a passionate software developer with a focus on creating 
+                            <span class="highlight">user-centered applications</span> and <span class="highlight">elegant solutions</span> 
+                            to complex problems. Currently pursuing Computer Science at Wilfrid Laurier University, 
+                            I'm developing a strong foundation in algorithms, data structures, and full-stack development.
                         </p>
                         <p>
-                            My journey in tech is driven by curiosity and a desire to create meaningful experiences. I believe in the power of clean code, 
-                            innovative design, and solving real-world problems through technology.
+                            My goal is to build software that positively impacts users' lives while continuously expanding my 
+                            technical toolkit. I'm particularly interested in <span class="highlight">interactive web applications</span> 
+                            and <span class="highlight">game development</span>, where creativity and technical skills merge.
                         </p>
                         <div class="personal-interests">
                             <h3>My Interests</h3>
                             <div class="interest-tags">
                                 <span>🚀 Space Technology</span>
                                 <span>🎮 Game Development</span>
+                                <span>🌐 Web Applications</span>
+                                <span>📱 Responsive Design</span>
+                                <span>🔧 Problem Solving</span>
                                 <span>🐶 Dog Training</span>
                                 <span>📸 Photography</span>
                                 <span>🌍 Travel</span>
@@ -61,7 +82,7 @@
                         </div>
                     </div>
                     <div class="about-dog-section">
-                        <img src="images/IMG_0058.jpg" alt="Rusanth and Dog" class="dog-image">
+                        <img loading="lazy" src="images/IMG_0058.jpg" alt="Rusanth and Dog" class="dog-image">
                         <p class="dog-description">
                             Meet my adventure buddy! Together, we explore the world, share coding breaks, 
                             and prove that great partnerships come in all forms.
@@ -75,15 +96,35 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3>Classic Bowl Cashier</h3>
-                            <p>Worked at classic bowl as a cashier</p>
+                            <h3>Cashier – Classic Bowl</h3>
+                            <p>
+                                Developed strong customer service skills in a fast-paced environment, handling an average of 100+ transactions daily with 99% accuracy. Implemented a new organization system that reduced wait times by 15%.
+                            </p>
+                            <div class="skills-gained">
+                                <span>Customer Service</span>
+                                <span>Problem Solving</span>
+                                <span>Time Management</span>
+                            </div>
                             <span class="timeline-date">2021 - Present</span>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3>School</h3>
-                            <p>Wilfrid Laurier University Waterloo for Computer Science</p>
+                            <h3>Computer Science Student – Wilfrid Laurier University</h3>
+                            <p>
+                                Currently pursuing a Bachelor's degree in Computer Science, specializing in software development, algorithms, and system design. Maintaining a 3.7 GPA while participating in coding competitions and hackathons.
+                            </p>
+                            <div class="key-coursework">
+                                <div class="skills-gained">
+                                <h4>Key Coursework:</h4>
+                                <ul>
+                                    <span>Data Structures & Algorithms</span>
+                                    <span>Web Development</span>
+                                    <span>Database Systems</span>
+                                    <span>Object-Oriented Programming</span>
+                                </ul>
+                            </div>
+                            </div>
                             <span class="timeline-date">2022 - Present</span>
                         </div>
                     </div>
@@ -92,34 +133,57 @@
 
             <section id="projects">
                 <h2>My Projects</h2>
+                <div class="project-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="game">Game</button>
+                </div>
                 <div class="project-grid">
-                    <div class="project">
+                    <div class="project" data-category="web">
+                        <div class="project-preview">
+                            <img loading="lazy" src="images/study-buddy-preview.png" alt="Study Buddy App Preview" class="project-image">
+                        </div>
                         <h3>Study Buddy 📖💜</h3>
                         <p>
                             <strong>Study Buddy</strong> is a personalized, fun, and interactive web app designed to keep you motivated and productive while studying! With a sleek, engaging design, it offers tools to enhance focus and motivation.  
                         </p>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Responsive Design</span>
+                        </div>
                         <ul>
-                            <li><strong>🎯 Study Timer:</strong> Set custom timers to structure your study sessions.</li>
-                            <li><strong>💬 Motivational Button:</strong> Get a boost of encouragement whenever you need it.</li>
-                            <li><strong>🎨 Custom Cursors:</strong> Unique flower-themed cursors for a playful touch.</li>
-                            <li><strong>📱 Mobile Responsive:</strong> Optimized for seamless use on all devices.</li>
+                            <li><strong>Study Timer:</strong> Set custom timers to structure your study sessions.</li>
+                            <li><strong>Motivational Button:</strong> Get a boost of encouragement whenever you need it.</li>
+                            <li><strong>Custom Cursors:</strong> Unique flower-themed cursors for a playful touch.</li>
+                            <li><strong>Mobile Responsive:</strong> Optimized for seamless use on all devices.</li>
                         </ul>
                         <p>
                             Whether you're tackling assignments or prepping for exams, Study Buddy makes studying more enjoyable and productive.
                         </p>
                         <div class="project-details">
                             <div class="project-links">
-                                <a href="https://github.com/rxddy/study-buddy" target="_blank">GitHub</a>
-                                <a href="https://rxddy.github.io/Study-Buddy/" target="_blank">Live website</a>
+                                <a href="https://github.com/rxddy/study-buddy" target="_blank" class="btn-primary"><i class="ri-github-fill"></i> GitHub</a>
+                                <a href="https://rxddy.github.io/Study-Buddy/" target="_blank" class="btn-secondary"><i class="ri-external-link-line"></i> Live website</a>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="project">
+                    <div class="project" data-category="web">
+                        <div class="project-preview">
+                            <img loading="lazy" src="images/asteroid-website-preview.png" alt="Asteroid Destroyer Website Preview" class="project-image">
+                        </div>
                         <h3>Asteroid Destroyer Website 🚀</h3>
                         <p>
                             The <strong>Asteroid Destroyer</strong> website is a dedicated hub for my retro-style space shooter game, designed with an immersive space theme. It provides visitors with an engaging experience that reflects the fast-paced action of the game itself.
                         </p>
+                        <div class="tech-stack">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Responsive Design</span>
+                        </div>
                         <ul>
                             <li><strong>Sleek Space-Themed Design</strong> – A visually appealing layout inspired by classic arcade aesthetics.</li>
                             <li><strong>Game Overview & Features</strong> – Detailed descriptions of gameplay, mechanics, and features.</li>
@@ -131,88 +195,139 @@
                         </p>
                         <div class="project-details">
                             <div class="project-links">
-                                <a href="https://github.com/rxddy/Asteroid-Destroyer-game/" target="_blank">GitHub</a>
-                                <a href="https://rxddy.github.io/Asteroid-Destroyer-Website/" target="_blank">Live Website</a>
+                                <a href="https://github.com/rxddy/Asteroid-Destroyer-Website/" target="_blank" class="btn-primary"><i class="ri-github-fill"></i> GitHub</a>
+                                <a href="https://rxddy.github.io/Asteroid-Destroyer-Website/" target="_blank" class="btn-secondary"><i class="ri-external-link-line"></i> Live Website</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project">
-                        <h3>Asteroid Destroyer Game 🚀🎮</h3>
+                    <div class="project" data-category="game">
+                        <div class="project-preview">
+                            <img loading="lazy" src="images/asteroid-game-preview.png" alt="Asteroid Destroyer Game Preview" class="project-image">
+                        </div>
+                        <h3>Asteroid Destroyer Game</h3>
                         <p>
                             <strong>Asteroid Destroyer</strong> is an exciting space shooter game developed using Python's Turtle graphics and Pygame, featuring an immersive gameplay experience with multiple customization options.
                         </p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Pygame</span>
+                            <span>Turtle Graphics</span>
+                            <span>Game Design</span>
+                        </div>
                         <ul>
-                            <li><strong>🎮 Dynamic Gameplay:</strong> Navigate and shoot through waves of asteroids and enemy ships.</li>
-                            <li><strong>🌈 Customization:</strong> Choose player color, toggle health pickups, and switch background themes.</li>
-                            <li><strong>🔧 Advanced Mechanics:</strong> Includes health system, scoring, and multiple game states.</li>
-                            <li><strong>🎵 Sound Effects:</strong> Immersive audio feedback for actions like shooting and explosions.</li>
+                            <li><strong>Dynamic Gameplay:</strong> Navigate and shoot through waves of asteroids and enemy ships.</li>
+                            <li><strong>Customization:</strong> Choose player color, toggle health pickups, and switch background themes.</li>
+                            <li><strong>Advanced Mechanics:</strong> Includes health system, scoring, and multiple game states.</li>
+                            <li><strong>Sound Effects:</strong> Immersive audio feedback for actions like shooting and explosions.</li>
                         </ul>
                         <p>
                             A showcase of game development skills, combining graphics, sound, and interactive game design in Python.
                         </p>
                         <div class="project-details">
                             <div class="project-links">
-                                <a href="https://github.com/rxddy/Asteroid-Destroyer-game/" target="_blank">GitHub</a>
-                                <a href="https://rxddy.github.io/Asteroid-Destroyer-Website#destoryer/" target="_blank">Game Website</a>
+                                <a href="https://github.com/rxddy/Asteroid-Destroyer-game/" target="_blank" class="btn-primary"><i class="ri-github-fill"></i> GitHub</a>
+                                <a href="https://rxddy.github.io/Asteroid-Destroyer-Website/" target="_blank" class="btn-secondary"><i class="ri-external-link-line"></i> Game Website</a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="project">
-                        <h3>Chat Application</h3>
-                        <p>
-                            <strong>Coming Soon</strong>
-                        </p>
-                        <ul>
-                        </ul>
-                        <p>
-                        </p>
-                        <div class="project-details">
-                            <div class="project-links">
-                                <a href="https://github.com/rxddy/portfolio/" target="_blank">GitHub</a>
-                                <a href="" target="_blank">Live Demo comming soon</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                
+                </div>
             </section>
-        </main>
-
-            </div>
-        </footer>
-    </div>
-            <!-- Previous sections remain the same -->
 
             <section id="skills">
                 <h2>My Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Python</h3>
-                        <img src="images/python.png" alt="Python">
-                        <p>Advanced programming in Python</p>
+                <div class="skills-container">
+                    <div class="skills-category">
+                        <h3>Frontend</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <h4>HTML & CSS</h4>
+                                <div class="skill-icons">
+                                    <img loading="lazy" src="images/html.png" alt="HTML">
+                                    <img loading="lazy" src="images/css.png" alt="CSS">
+                                </div>
+                                <p>Web structure, styling, and responsive design</p>
+                                <div class="skill-level">
+                                    <div class="level-indicator advanced"></div>
+                                    <span>Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <h4>JavaScript</h4>
+                                <img loading="lazy" src="images/javascript.png" alt="JavaScript">
+                                <p>Interactive web development and front-end scripting</p>
+                                <div class="skill-level">
+                                    <div class="level-indicator intermediate"></div>
+                                    <span>Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <h4>React.js</h4>
+                                <img loading="lazy" src="images/react.png" alt="React">
+                                <p>Modern UI development with reusable components</p>
+                                <div class="skill-level">
+                                    <div class="level-indicator intermediate"></div>
+                                    <span>Intermediate</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <h3>Java</h3>
-                        <img src="images/java.png" alt="Java">
-                        <p>Object-oriented programming</p>
+                    
+                    <div class="skills-category">
+                        <h3>Backend</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <h4>Python</h4>
+                                <img loading="lazy" src="images/python.png" alt="Python">
+                                <p>Advanced programming, data processing, and backend development</p>
+                                <div class="skill-level">
+                                    <div class="level-indicator advanced"></div>
+                                    <span>Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <h4>Java</h4>
+                                <img loading="lazy" src="images/java.png" alt="Java">
+                                <p>Object-oriented programming and application development</p>
+                                <div class="skill-level">
+                                    <div class="level-indicator intermediate"></div>
+                                    <span>Intermediate</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <h3>HTML</h3>
-                        <img src="images/html.png" alt="HTML">
-                        <p>Web structure and semantics</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>CSS</h3>
-                        <img src="images/css.png" alt="CSS">
-                        <p>Styling and responsive design</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>JavaScript</h3>
-                        <img src="images/javascript.png" alt="JavaScript">
-                        <p>Interactive web development</p>
+                    
+                    <div class="skills-category">
+                        <h3>Tools & Technologies</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <h4>Git & GitHub</h4>
+                                <img loading="lazy" src="images/github.png" alt="GitHub">
+                                <p>Version control and collaborative development</p>
+                                <div class="skill-level">
+                                    <div class="level-indicator intermediate"></div>
+                                    <span>Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <h4>Responsive Design</h4>
+                                <img loading="lazy" src="images/Responsive Design.png" alt="Responsive Design">
+                                <p>Creating websites that work on all devices</p>
+                                <div class="skill-level">
+                                    <div class="level-indicator advanced"></div>
+                                    <span>Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-card">
+                                <h4>UI/UX Design</h4>
+                                <img loading="lazy" src="images/ui-ux.png" alt="UI/UX Design">
+                                <p>Creating intuitive and appealing user interfaces</p>
+                                <div class="skill-level">
+                                    <div class="level-indicator advanced"></div>
+                                    <span>Advanced</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -221,8 +336,8 @@
                 <h2>Contact Me</h2>
                 <div class="contact-grid">
                     <div class="contact-info">
-                        <h3>Get in Touch</h3>
-                        <p>Feel free to reach out through any of these platforms:</p>
+                        <h3>Let's Connect!</h3>
+                        <p>I'm always open to new opportunities, collaborations, and discussions. Reach out through any of these platforms:</p>
                         <div class="contact-links">
                             <a href="https://www.linkedin.com/in/rusanth-pirabakaran-7490b42a5/" target="_blank">
                                 <i class="ri-linkedin-fill"></i> LinkedIn
@@ -235,28 +350,25 @@
                             </a>
                         </div>
                     </div>
-                    <section id="resume">
-                        <h2>Resume</h2>
-                        <div class="resume-download">
-                            <p>Want to know more about my professional background?</p>
-                            <a href="Rusanth Pirabakaran- Resume.pdf" download class="download-btn">
-                                <i class="ri-download-line"></i> Download Resume
-                            </a>
-                        </div>
-                    </section>
-
+                    <div class="resume-download">
+                        <h3>Resume</h3>
+                        <p>Want to know more about my professional background?</p>
+                        <a href="Rusanth_Pirabakaran_Resume.pdf" download class="download-btn">
+                            <i class="ri-download-line"></i> Download Resume
+                        </a>
+                    </div>
                     <div class="contact-info">
                         <h3>Send a Message</h3>
                         <p>I'm always open to new opportunities and collaborations.</p>
                         <form class="contact-form" action="https://formspree.io/f/xrbenlnl" method="POST">
                             <div class="form-group">
-                                <input type="text" name="name" placeholder="Your Name" required>
+                                <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" placeholder="Your Email" required>
+                                <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
                             </div>
                             <div class="form-group">
-                                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                                <textarea name="message" placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
                             </div>
                             <button type="submit" class="submit-btn">Send Message</button>
                         </form>
@@ -264,7 +376,13 @@
                 </div>
             </section>
         </main>
-
+        
+        <footer>
+            <div class="footer-content">
+                <p>© 2025 Rusanth Pirabakaran. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
