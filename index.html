@@ -1,532 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rusanth Pirabakaran - Portfolio</title>
-    <meta name="description" content="Rusanth Pirabakaran: Software developer specializing in Python, web development, and innovative tech solutions">
-    <meta name="keywords" content="software developer, Python, web development, game development, portfolio">
-    <meta property="og:title" content="Rusanth Pirabakaran - Portfolio">
-    <meta property="og:description" content="Showcasing my software development skills, projects, and experiences.">
-    <meta property="og:image" content="images/portfolio-preview.jpg">
-    <meta property="og:url" content="https://yourportfolio.com">
-    
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rusanth Pirabakaran | Software Portfolio</title>
+  <meta name="description" content="Rusanth Pirabakaran's software portfolio featuring web apps, AI desktop tools, mobile apps, automation utilities, games, and database projects.">
+  <meta name="keywords" content="Rusanth Pirabakaran, software developer, React, Vite, Python, Java, Tauri, portfolio, computer science">
+  <meta property="og:title" content="Rusanth Pirabakaran | Software Portfolio">
+  <meta property="og:description" content="Interactive portfolio of full-stack, AI, mobile, game, and automation projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rxddy.github.io/Portfolio/">
+  <meta property="og:image" content="images/ProfilePic.jpg">
+  <link rel="icon" href="images/ProfilePic.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="profile-section">
-                <div class="image-carousel">
-                    <img src="images/ProfilePic.jpg" alt="Rusanth Pirabakaran" class="profile-image active">
-                    <img src="images/HeadphoneRusanth.jpg" alt="Rusanth with headphones" class="profile-image">
-                </div>
-                <div class="carousel-indicators">
-                    <span class="indicator active"></span>
-                    <span class="indicator"></span>
-                </div>
-                <h1>Rusanth Pirabakaran</h1>
-                <p class="subtitle">Software Developer | Creative Innovator</p>
-                <p class="tagline">Bringing ideas to life through clean code and intuitive design</p>
-            </div>
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experiences">Experiences</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><button id="theme-toggle" aria-label="Toggle dark mode">
-                        <i class="ri-sun-line" id="light-icon"></i>
-                        <i class="ri-moon-line" id="dark-icon"></i>
-                    </button></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <section id="about">
-                <h2>About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>
-                            Hey there! I'm Rusanth, a passionate software developer with a focus on creating 
-                            <span class="highlight">user-centered applications</span> and <span class="highlight">elegant solutions</span> 
-                            to complex problems. Currently pursuing Computer Science at Wilfrid Laurier University, 
-                            I'm developing a strong foundation in algorithms, data structures, and full-stack development.
-                        </p>
-                        <p>
-                            My goal is to build software that positively impacts users' lives while continuously expanding my 
-                            technical toolkit. I'm particularly interested in <span class="highlight">interactive web applications</span> 
-                            and <span class="highlight">game development</span>, where creativity and technical skills merge.
-                        </p>
-                        <div class="personal-interests">
-                            <h3>My Interests</h3>
-                            <div class="interest-tags">
-                                <span>🚀 Space Technology</span>
-                                <span>🎮 Game Development</span>
-                                <span>🌐 Web Applications</span>
-                                <span>📱 Responsive Design</span>
-                                <span>🔧 Problem Solving</span>
-                                <span>🐶 Dog Training</span>
-                                <span>📸 Photography</span>
-                                <span>🌍 Travel</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-dog-section">
-                        <img loading="lazy" src="images/Rusanth-and-Buddy.jpg" alt="Rusanth and Dog" class="dog-image">
-                        <p class="dog-description">
-                            Meet my adventure partner! Buddy, Together, we explore the world, share coding breaks, 
-                            and prove that great partnerships come in all forms.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="experiences">
-                <h2>Professional Journey</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Cashier – Classic Bowl</h3>
-                            <p>
-                                Developed strong customer service skills in a fast-paced environment, handling an average of 100+ transactions daily with 99% accuracy. Implemented a new organization system that reduced wait times by 15%.
-                            </p>
-                            <div class="skills-gained">
-                                <span>Customer Service</span>
-                                <span>Problem Solving</span>
-                                <span>Time Management</span>
-                            </div>
-                            <span class="timeline-date">2021 - Present</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h3>Computer Science Student – Wilfrid Laurier University</h3>
-                            <p>
-                                Currently pursuing a Bachelor's degree in Computer Science, specializing in software development, algorithms, and system design. Maintaining a 3.7 GPA while participating in coding competitions and hackathons.
-                            </p>
-                            <div class="key-coursework">
-                                <div class="skills-gained">
-                                <h4>Key Coursework:</h4>
-                                <ul>
-                                    <span>Data Structures & Algorithms</span>
-                                    <span>Web Development</span>
-                                    <span>Database Systems</span>
-                                    <span>Object-Oriented Programming</span>
-                                </ul>
-                            </div>
-                            </div>
-                            <span class="timeline-date">2022 - Present</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="skills">
-                <h2>My Skills</h2>
-                <div class="skills-container">
-                    <div class="skills-category">
-                        <h3>Frontend</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <h4>HTML & CSS</h4>
-                                <div class="skill-icons">
-                                    <img loading="lazy" src="images/html.png" alt="HTML">
-                                    <img loading="lazy" src="images/css.png" alt="CSS">
-                                </div>
-                                <p>Web structure, styling, and responsive design</p>
-                                <div class="skill-level">
-                                    <div class="level-indicator advanced"></div>
-                                    <span>Advanced</span>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <h4>JavaScript</h4>
-                                <img loading="lazy" src="images/javascript.png" alt="JavaScript">
-                                <p>Interactive web development and front-end scripting</p>
-                                <div class="skill-level">
-                                    <div class="level-indicator intermediate"></div>
-                                    <span>Intermediate</span>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <h4>React.js</h4>
-                                <img loading="lazy" src="images/React.png" alt="React">
-                                <p>Modern UI development with reusable components</p>
-                                <div class="skill-level">
-                                    <div class="level-indicator intermediate"></div>
-                                    <span>Intermediate</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skills-category">
-                        <h3>Backend</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <h4>Python</h4>
-                                <img loading="lazy" src="images/python.png" alt="Python">
-                                <p>Advanced programming, data processing, and backend development</p>
-                                <div class="skill-level">
-                                    <div class="level-indicator advanced"></div>
-                                    <span>Advanced</span>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <h4>Java</h4>
-                                <img loading="lazy" src="images/java.png" alt="Java">
-                                <p>Object-oriented programming and application development</p>
-                                <div class="skill-level">
-                                    <div class="level-indicator intermediate"></div>
-                                    <span>Intermediate</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skills-category">
-                        <h3>Tools & Technologies</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <h4>Git & GitHub</h4>
-                                <img loading="lazy" src="images/GitHub.png" alt="GitHub">
-                                <p>Version control and collaborative development</p>
-                                <div class="skill-level">
-                                    <div class="level-indicator intermediate"></div>
-                                    <span>Intermediate</span>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <h4>Responsive Design</h4>
-                                <img loading="lazy" src="images/Responsive Design.png" alt="Responsive Design">
-                                <p>Creating websites that work on all devices</p>
-                                <div class="skill-level">
-                                    <div class="level-indicator advanced"></div>
-                                    <span>Advanced</span>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <h4>UI/UX Design</h4>
-                                <img loading="lazy" src="images/ui-ux.png" alt="UI/UX Design">
-                                <p>Creating intuitive and appealing user interfaces</p>
-                                <div class="skill-level">
-                                    <div class="level-indicator advanced"></div>
-                                    <span>Advanced</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects">
-                <h2>My Projects</h2>
-                <div class="project-filter">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="web">Web</button>
-                    <button class="filter-btn" data-filter="game">Game</button>
-                </div>
-                <div class="project-grid">
-                    <div class="project" data-category="web">
-                        <div class="project-preview">
-                            <img loading="lazy" src="images/study-buddy-preview.png" alt="Study Buddy App Preview" class="project-image">
-                        </div>
-                        <h3>Study Buddy 📖💜</h3>
-                        <p>
-                            <strong>Study Buddy</strong> is a personalized, fun, and interactive web app designed to keep you motivated and productive while studying! With a sleek, engaging design, it offers tools to enhance focus and motivation.  
-                        </p>
-                        <div class="tech-stack">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>Responsive Design</span>
-                        </div>
-                        <ul>
-                            <li><strong>Study Timer:</strong> Set custom timers to structure your study sessions.</li>
-                            <li><strong>Motivational Button:</strong> Get a boost of encouragement whenever you need it.</li>
-                            <li><strong>Custom Cursors:</strong> Unique flower-themed cursors for a playful touch.</li>
-                            <li><strong>Mobile Responsive:</strong> Optimized for seamless use on all devices.</li>
-                        </ul>
-                        <p>
-                            Whether you're tackling assignments or prepping for exams, Study Buddy makes studying more enjoyable and productive.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-links">
-                                <a href="https://github.com/rxddy/study-buddy" target="_blank" class="btn-primary"><i class="ri-github-fill"></i> GitHub</a>
-                                <a href="https://rxddy.github.io/Study-Buddy/" target="_blank" class="btn-secondary"><i class="ri-external-link-line"></i> Live website</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project" data-category="web">
-                        <div class="project-preview">
-                            <img loading="lazy" src="images/asteroid-website-preview.png" alt="Asteroid Destroyer Website Preview" class="project-image">
-                        </div>
-                        <h3>Asteroid Destroyer Website 🚀</h3>
-                        <p>
-                            The <strong>Asteroid Destroyer</strong> website is a dedicated hub for my retro-style space shooter game, designed with an immersive space theme. It provides visitors with an engaging experience that reflects the fast-paced action of the game itself.
-                        </p>
-                        <div class="tech-stack">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript</span>
-                            <span>Responsive Design</span>
-                        </div>
-                        <ul>
-                            <li><strong>Sleek Space-Themed Design</strong> – A visually appealing layout inspired by classic arcade aesthetics.</li>
-                            <li><strong>Game Overview & Features</strong> – Detailed descriptions of gameplay, mechanics, and features.</li>
-                            <li><strong>Download Link</strong> – Easy access for players to download and enjoy the game.</li>
-                            <li><strong>How to Play Guide</strong> – Simple instructions for players to jump in and start blasting asteroids and enemy ships.</li>
-                        </ul>
-                        <p>
-                            The website serves as both a promotional platform and an informational resource, allowing visitors to learn about the game and download it effortlessly.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-links">
-                                <a href="https://github.com/rxddy/Asteroid-Destroyer-Website/" target="_blank" class="btn-primary"><i class="ri-github-fill"></i> GitHub</a>
-                                <a href="https://rxddy.github.io/Asteroid-Destroyer-Website/" target="_blank" class="btn-secondary"><i class="ri-external-link-line"></i> Live Website</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project" data-category="game">
-                        <div class="project-preview">
-                            <img loading="lazy" src="images/asteroid-game-preview.png" alt="Asteroid Destroyer Game Preview" class="project-image">
-                        </div>
-                        <h3>Asteroid Destroyer Game</h3>
-                        <p>
-                            <strong>Asteroid Destroyer</strong> is an exciting space shooter game developed using Python's Turtle graphics and Pygame, featuring an immersive gameplay experience with multiple customization options.
-                        </p>
-                        <div class="tech-stack">
-                            <span>Python</span>
-                            <span>Pygame</span>
-                            <span>Turtle Graphics</span>
-                            <span>Game Design</span>
-                        </div>
-                        <ul>
-                            <li><strong>Dynamic Gameplay:</strong> Navigate and shoot through waves of asteroids and enemy ships.</li>
-                            <li><strong>Customization:</strong> Choose player color, toggle health pickups, and switch background themes.</li>
-                            <li><strong>Advanced Mechanics:</strong> Includes health system, scoring, and multiple game states.</li>
-                            <li><strong>Sound Effects:</strong> Immersive audio feedback for actions like shooting and explosions.</li>
-                        </ul>
-                        <p>
-                            A showcase of game development skills, combining graphics, sound, and interactive game design in Python.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-links">
-                                <a href="https://github.com/rxddy/Asteroid-Destroyer-game/" target="_blank" class="btn-primary"><i class="ri-github-fill"></i> GitHub</a>
-                                <a href="https://rxddy.github.io/Asteroid-Destroyer-Website/" target="_blank" class="btn-secondary"><i class="ri-external-link-line"></i> Game Website</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project" data-category="web">
-                        <div class="project-preview">
-                            <img loading="lazy" src="images/Tasty-Go-Preview.png" alt="TastyGo Food Delivery App Preview" class="project-image">
-                        </div>
-                        <h3>TastyGo</h3>
-                        <p>
-                            A comprehensive food delivery platform built with vanilla web technologies, featuring both customer-facing ordering system and restaurant management dashboard. TastyGo demonstrates advanced front-end development with a focus on user experience and interactive features.
-                        </p>
-                        <div class="tech-stack">
-                            <span>HTML5</span>
-                            <span>CSS3</span>
-                            <span>JavaScript (ES6+)</span>
-                            <span>Google Maps API</span>
-                            <span>Local Storage</span>
-                            <span>Responsive Design</span>
-                        </div>
-                        <ul>
-                            <li><strong>Dual Interface:</strong> Customer ordering system and restaurant management dashboard in one application.</li>
-                            <li><strong>Interactive Features:</strong> Shopping cart, order customization, address management with maps integration, and real-time order tracking.</li>
-                            <li><strong>Restaurant Management:</strong> Order processing, menu and coupon management, driver assignment, and sales analytics.</li>
-                            <li><strong>User Experience:</strong> Dark/light theme toggle, responsive design, and intuitive navigation for seamless food ordering.</li>
-                            <li><strong>Technical Implementation:</strong> Modular JavaScript architecture, persistent data storage, and dynamic content rendering without page reloads.</li>
-                        </ul>
-                        <p>
-                            TastyGo showcases advanced front-end development skills by combining attractive design with complex functionality in a real-world application context.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-links">
-                                <a href="https://github.com/rxddy/tastyGo" target="_blank" class="btn-primary"><i class="ri-github-fill"></i> GitHub</a>
-                                <a href="https://rxddy.github.io/TastyGo/" target="_blank" class="btn-secondary"><i class="ri-external-link-line"></i> Live Website</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project" data-category="game">
-                        <div class="project-preview">
-                            <img loading="lazy" src="images/pong-game-preview.jpg" alt="Pong Game Preview" class="project-image">
-                        </div>
-                        <h3>Classic Pong Game with Modern Features</h3>
-                        <p>
-                            <strong>Pong Reimagined</strong> is my take on the classic arcade game, built with Python and Pygame. This version combines retro gameplay with modern features like power-ups, customizable paddles, and multiple difficulty settings.
-                        </p>
-                        <div class="tech-stack">
-                            <span>Python</span>
-                            <span>Pygame</span>
-                            <span>Game Design</span>
-                            <span>UI/UX</span>
-                        </div>
-                        <ul>
-                            <li><strong>Customization:</strong> Change paddle colors, select from multiple background themes, and adjust AI difficulty.</li>
-                            <li><strong>Power-up System:</strong> Dynamic gameplay with speed boosts, paddle size changes, and ball speed modifications.</li>
-                            <li><strong>Realistic Physics:</strong> Enhanced paddle physics with spin effects based on paddle movement.</li>
-                            <li><strong>Adaptive AI:</strong> Four difficulty levels from Easy to Impossible, providing challenge for all skill levels.</li>
-                            <li><strong>Progressive Speed:</strong> Ball gradually increases in speed during rallies, creating more intense gameplay.</li>
-                        </ul>
-                        <p>
-                            This project demonstrates my ability to combine game physics, UI design, and player experience to create an engaging and polished game application.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-links">
-                                <a href="https://github.com/rxddy/pong-game" target="_blank" class="btn-primary"><i class="ri-github-fill"></i> GitHub</a>
-                                <a href="#" target="_blank" class="btn-secondary"><i class="ri-download-line"></i> Download Game</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project" data-category="web">
-                        <div class="project-preview">
-                            <img loading="lazy" src="images/Truenas.png" alt="TrueNAS Home Server Preview" class="project-image">
-                        </div>
-                        <h3>TrueNAS Home Server 🏠💾</h3>
-                        <p>
-                            <strong>TrueNAS Home Server</strong> is my custom-built network-attached storage solution providing centralized file storage, backup, and media streaming for my home network. Built on enterprise-grade ZFS filesystem, it ensures data integrity and redundancy while offering powerful features for home and development use.
-                        </p>
-                        <div class="tech-stack">
-                            <span>TrueNAS Core</span>
-                            <span>ZFS Filesystem</span>
-                            <span>Network Storage</span>
-                            <span>RAID Configuration</span>
-                            <span>Media Server</span>
-                            <span>Backup Solutions</span>
-                        </div>
-                        <ul>
-                            <li><strong>Centralized Storage:</strong> Multi-terabyte storage pool with automatic snapshots and data deduplication.</li>
-                            <li><strong>Media Streaming:</strong> Plex media server integration for streaming movies, TV shows, and music across devices.</li>
-                            <li><strong>Automated Backups:</strong> Scheduled backups of critical data with versioning and cloud sync capabilities.</li>
-                            <li><strong>Network Services:</strong> File sharing via SMB/NFS, remote access, and VPN integration for secure external access.</li>
-                            <li><strong>Monitoring & Alerts:</strong> Real-time system monitoring with email notifications for drive health and system status.</li>
-                        </ul>
-                        <p>
-                            This project demonstrates my understanding of enterprise storage solutions, network administration, and system reliability - essential skills for building robust infrastructure solutions.
-                        </p>
-                        <div class="project-details">
-                            <div class="project-links">
-                                <a href="#" target="_blank" class="btn-secondary"><i class="ri-server-line"></i> System Specs</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-
-                    <div class="project-grid">
-                        <div class="project" data-category="web">
-                            <div class="project-preview">
-                                <img loading="lazy" src="images/Weather-app.png" alt="Weather Dashboard Preview" class="project-image">
-                            </div>
-                    
-                    <div class="project-grid">
-                        <div class="project" data-category="web">
-                            <div class="project-preview">
-                                <img loading="lazy" src="images/Weather-app.png" alt="Weather Dashboard Preview" class="project-image">
-                            </div>
-                            <h3>Weather Dashboard ⛅</h3>
-                            <p>
-                                <strong>Weather Dashboard</strong> is an elegant, intuitive web application providing real-time weather data for any location worldwide. Crafted with modern HTML, CSS, and JavaScript, it leverages the OpenWeatherMap API to deliver precise meteorological information in a visually appealing interface.
-                            </p>
-                            <div class="tech-stack">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                                <span>Responsive Design</span>
-                                <span>REST API</span>
-                            </div>
-                            <ul>
-                                <li><strong>Smart Outfit Recommendations</strong> — Intelligent clothing suggestions based on current weather conditions</li>
-                                <li><strong>Real-Time Updates</strong> — Continuously refreshed forecast data ensuring accuracy</li>
-                                <li><strong>Global Coverage</strong> — Seamless location search for weather information anywhere in the world</li>
-                                <li><strong>Extended Forecast</strong> — Comprehensive 7-day weather outlook for better planning</li>
-                                <li><strong>Dark/Light Mode</strong> — User-friendly interface adaptable to any time of day</li>
-                            </ul>
-                            <p>
-                                Perfect for daily planning or travel preparation, this dashboard combines functionality with elegant design to deliver weather information that's both accessible and actionable.
-                            </p>
-                            <div class="project-details">
-                                <div class="project-links">
-                                    <a href="https://github.com/rxddy/Weather-app" target="_blank" class="btn-primary"><i class="ri-github-fill"></i> GitHub</a>
-                                    <a href="https://rxddy.github.io/Weather-app/" target="_blank" class="btn-secondary"><i class="ri-external-link-line"></i> Live Demo</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </section>
-
-                
-
-            <section id="contact">
-                <h2>Contact Me</h2>
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Let's Connect!</h3>
-                        <p>I'm always open to new opportunities, collaborations, and discussions. Reach out through any of these platforms:</p>
-                        <div class="contact-links">
-                            <a href="https://www.linkedin.com/in/rusanth-pirabakaran-7490b42a5/" target="_blank">
-                                <i class="ri-linkedin-fill"></i> LinkedIn
-                            </a>
-                            <a href="https://github.com/rxddy" target="_blank">
-                                <i class="ri-github-fill"></i> GitHub
-                            </a>
-                            <a href="https://www.instagram.com/Rxddy._" target="_blank">
-                                <i class="ri-instagram-fill"></i> Instagram
-                            </a>
-                        </div>
-                    </div>
-                    <div class="resume-download">
-                        <h3>Resume</h3>
-                        <p>Want to know more about my professional background?</p>
-                        <a href="Rusanth Pirabakaran- Resume.pdf" download class="download-btn">
-                            <i class="ri-download-line"></i> Download Resume
-                        </a>
-                    </div>
-                    <div class="contact-info">
-                        <h3>Send a Message</h3>
-                        <p>I'm always open to new opportunities and collaborations.</p>
-                        <form class="contact-form" action="https://formspree.io/f/xrbenlnl" method="POST">
-                            <div class="form-group">
-                                <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-        </main>
-        
-        <footer>
-            <div class="footer-content">
-                <p>© 2025 Rusanth Pirabakaran. All rights reserved.</p>
-            </div>
-        </footer>
-    </div>
-    <script src="script.js"></script>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <header class="site-header" id="top">
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a href="#top" class="brand" aria-label="Rusanth Pirabakaran home"><span class="brand-mark">RP</span><span>Rusanth Pirabakaran</span></a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><i class="ri-menu-3-line"></i></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#workbench">Workbench</a><a href="#projects">Projects</a><a href="#skills">Stack</a><a href="#timeline">Timeline</a><a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme"><i class="ri-sun-line"></i></button>
+      </div>
+    </nav>
+    <section class="hero" aria-labelledby="hero-title">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Computer Science student and software builder</p>
+          <h1 id="hero-title">I build practical apps with enough polish to feel real.</h1>
+          <p class="hero-lede">A focused portfolio of web apps, mobile builds, desktop AI tools, automation scripts, games, and database work pulled from my active local project folders.</p>
+          <div class="hero-actions"><a class="btn primary" href="#projects"><i class="ri-layout-grid-line"></i> Explore Projects</a><a class="btn ghost" href="Rusanth_Pirabakaran_Resume.pdf" download><i class="ri-download-line"></i> Resume</a></div>
+          <div class="hero-metrics" aria-label="Portfolio summary"><span><strong id="metric-projects">0</strong> projects</span><span><strong id="metric-categories">0</strong> categories</span><span><strong id="metric-featured">0</strong> featured builds</span></div>
+        </div>
+        <div class="hero-panel" aria-label="Live portfolio console">
+          <div class="console-bar"><span></span><span></span><span></span><em>portfolio/workbench</em></div>
+          <div class="profile-card"><img src="images/ProfilePic.jpg" alt="Rusanth Pirabakaran" class="profile-image"><div><p class="profile-kicker">Now building</p><h2 id="rotating-focus">React apps</h2><p>React/Vite, Node/Express, Python tools, Java/Gradle, Rust/Tauri, SQL, and mobile prototypes.</p></div></div>
+          <div class="signal-grid" id="signal-grid"></div>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main id="main">
+    <section class="section workbench" id="workbench">
+      <div class="section-heading compact"><p class="eyebrow">Interactive workbench</p><h2>Browse by what you need to see.</h2><p>Filter the project library, search by stack, and open details without leaving the page.</p></div>
+      <div class="control-panel" aria-label="Project controls"><label class="search-box"><i class="ri-search-line"></i><input id="project-search" type="search" placeholder="Search React, Python, Tauri, SQL..." autocomplete="off"></label><div class="filter-row" id="filter-row" aria-label="Project filters"></div><button class="btn small ghost" id="shuffle-featured" type="button"><i class="ri-shuffle-line"></i> Spotlight</button></div>
+      <div class="spotlight" id="spotlight" aria-live="polite"></div>
+    </section>
+    <section class="section" id="projects">
+      <div class="section-heading split"><div><p class="eyebrow">Project library</p><h2>Work from C:/Dev and both OneDrive CS folders.</h2></div><p class="section-note">I listed the meaningful projects and skipped generated dependencies, build folders, archives, and private bulk files so the GitHub Pages repo stays light.</p></div>
+      <p class="result-status" id="result-status" aria-live="polite"></p><div class="project-grid" id="project-grid"></div>
+    </section>
+    <section class="section stack-section" id="skills"><div class="section-heading compact"><p class="eyebrow">Stack map</p><h2>Tools I keep using across projects.</h2></div><div class="stack-layout"><div class="stack-orbit" aria-hidden="true"><button type="button">React</button><button type="button">Node</button><button type="button">Python</button><button type="button">Tauri</button><button type="button">SQL</button><button type="button">Expo</button></div><div class="stack-cards" id="stack-cards"></div></div></section>
+    <section class="section timeline-section" id="timeline"><div class="section-heading compact"><p class="eyebrow">Path</p><h2>Student, builder, operator.</h2></div><div class="timeline"><article><span>2022 - Present</span><h3>Computer Science at Wilfrid Laurier University</h3><p>Coursework and projects across algorithms, databases, software design, web development, and practical app delivery.</p></article><article><span>2021 - Present</span><h3>Classic Bowl customer-facing role</h3><p>Daily communication, transaction handling, service recovery, and operations experience that feeds into product thinking.</p></article><article><span>Current focus</span><h3>Shipping more complete products</h3><p>Turning school and personal projects into cleaner demos with useful interaction, deployment notes, and stronger frontend polish.</p></article></div></section>
+    <section class="section contact-section" id="contact"><div class="contact-grid"><div><p class="eyebrow">Contact</p><h2>Want to talk about a project?</h2><p class="section-note">Best next action: view the work, download the resume, or reach out directly.</p><div class="contact-actions"><a href="mailto:rusanthpirabakaran@gmail.com" class="btn primary"><i class="ri-mail-line"></i> Email</a><a href="https://github.com/rxddy" target="_blank" rel="noreferrer" class="btn ghost"><i class="ri-github-fill"></i> GitHub</a><a href="https://www.linkedin.com/in/rusanth-pirabakaran-7490b42a5/" target="_blank" rel="noreferrer" class="btn ghost"><i class="ri-linkedin-box-fill"></i> LinkedIn</a></div></div><form class="message-card" action="https://formspree.io/f/xwkgrzer" method="POST"><label>Name <input type="text" name="name" required></label><label>Email <input type="email" name="email" required></label><label>Message <textarea name="message" rows="4" required></textarea></label><button class="btn primary" type="submit"><i class="ri-send-plane-line"></i> Send</button></form></div></section>
+  </main>
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title"><button class="dialog-close" type="button" aria-label="Close project details"><i class="ri-close-line"></i></button><div id="dialog-content"></div></dialog>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,179 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mainNav = document.getElementById('main-nav');
-    
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('open');
-            mobileMenuToggle.classList.toggle('active');
-        });
-    }
-    
-    // Image carousel functionality
-    const profileImages = document.querySelectorAll('.profile-image');
-    const indicators = document.querySelectorAll('.indicator');
-    let currentIndex = 0;
-    
-    function changeImage(index) {
-        // Remove active class from all images and indicators
-        profileImages.forEach(img => img.classList.remove('active'));
-        indicators.forEach(dot => dot.classList.remove('active'));
-        
-        // Add active class to current image and indicator
-        profileImages[index].classList.add('active');
-        indicators[index].classList.add('active');
-        
-        currentIndex = index;
-    }
-    
-    // Set up indicator click events
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            changeImage(index);
-        });
-    });
-    
-    // Auto-rotate images every 5 seconds
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % profileImages.length;
-        changeImage(currentIndex);
-    }, 5000);
-    
-    // Project filtering
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projects = document.querySelectorAll('.project');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            button.classList.add('active');
-            
-            const filter = button.getAttribute('data-filter');
-            
-            // Show/hide projects based on filter
-            projects.forEach(project => {
-                if (filter === 'all' || project.getAttribute('data-category') === filter) {
-                    project.style.display = 'block';
-                } else {
-                    project.style.display = 'none';
-                }
-            });
-        });
-    });
-    
-    // Dark mode toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-mode');
-    }
-    
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            // Save theme preference
-            const isDarkMode = body.classList.contains('dark-mode');
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-        });
-    }
-    
-    // Smooth scroll for navigation links
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Close mobile menu if open
-            if (mainNav.classList.contains('open')) {
-                mainNav.classList.remove('open');
-                mobileMenuToggle.classList.remove('active');
-            }
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 30,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Form submission with validation
-    const contactForm = document.querySelector('.contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            // Basic form validation
-            const nameInput = contactForm.querySelector('input[name="name"]');
-            const emailInput = contactForm.querySelector('input[name="email"]');
-            const messageInput = contactForm.querySelector('textarea[name="message"]');
-            
-            let isValid = true;
-            
-            if (!nameInput.value.trim()) {
-                nameInput.style.borderColor = 'var(--error-color)';
-                isValid = false;
-            } else {
-                nameInput.style.borderColor = 'var(--border-color)';
-            }
-            
-            if (!emailInput.value.trim() || !isValidEmail(emailInput.value)) {
-                emailInput.style.borderColor = 'var(--error-color)';
-                isValid = false;
-            } else {
-                emailInput.style.borderColor = 'var(--border-color)';
-            }
-            
-            if (!messageInput.value.trim()) {
-                messageInput.style.borderColor = 'var(--error-color)';
-                isValid = false;
-            } else {
-                messageInput.style.borderColor = 'var(--border-color)';
-            }
-            
-            if (!isValid) {
-                e.preventDefault();
-            }
-        });
-    }
-    
-    // Email validation helper
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-    
-    // Reveal animations for sections
-    const revealElements = document.querySelectorAll('section');
-    
-    function checkReveal() {
-        const windowHeight = window.innerHeight;
-        const revealPoint = 150;
-        
-        revealElements.forEach(element => {
-            const revealTop = element.getBoundingClientRect().top;
-            
-            if (revealTop < windowHeight - revealPoint) {
-                element.classList.add('revealed');
-            }
-        });
-    }
-    
-    // Initial check
-    checkReveal();
-    
-    // Check on scroll
-    window.addEventListener('scroll', checkReveal);
-});
+const projects=[{"title":"OpenClaw / JobApp AI","category":"AI","source":"OneDrive CS","image":"images/openclaw-app.png","featured":true,"stack":["Tauri","Rust","JavaScript","Python","PowerShell"],"summary":"A Windows desktop workspace for job applications, local automation, AI-assisted review flows, and controlled provider calls through a native backend.","impact":["Packages native Windows builds with MSI/NSIS workflows.","Keeps AI calls out of the renderer and behind backend boundaries.","Includes local file review, deployment scripts, and operator-style tooling."],"links":[]},{"title":"BowlersProShop.ca","category":"Full-stack","source":"C:/Dev","image":"images/windows-desktop-app.png","featured":true,"stack":["React","Vite","Express","Supabase","Motion"],"summary":"A premium bowling pro shop storefront and service site with product data, manufacturer coverage tooling, and polished retail UI patterns.","impact":["Uses React/Vite with an Express layer and Supabase integration.","Includes scripts for product image coverage and data hygiene.","Built around real pro shop services like drilling, fitting, resurfacing, and equipment sales."],"links":[]},{"title":"Local Career Builder","category":"AI","source":"C:/Dev","image":"images/Truenas.png","featured":true,"stack":["React","Vite","Framer Motion","Playwright","PDF"],"summary":"A local job-search workspace for resumes, cover letters, application tracking, and repeatable career workflows.","impact":["Built as a React/Vite frontend with local workflow storage.","Includes browser tests and PDF-oriented utilities.","Organizes application materials around practical job-search actions."],"links":[]},{"title":"Olivia","category":"AI","source":"C:/Dev","image":"images/windows-desktop-app.png","featured":true,"stack":["Electron","React","FastAPI","Python","Ollama"],"summary":"A local-first Windows assistant with typed chat, safe tool calls, voice paths, app controls, and an Electron desktop shell.","impact":["FastAPI backend exposes health, chat, tool, voice, and TTS endpoints.","Electron + React desktop shell keeps the assistant local-first.","Tool execution is confirmation-aware for safer desktop automation."],"links":[]},{"title":"Us Couples App","category":"Mobile","source":"C:/Dev","image":"images/us-app.png","featured":true,"stack":["Expo","React Native","Node","Express","MongoDB"],"summary":"A private shared space for two people with mobile app flows, a Mongo-backed API, and a Vite marketing site.","impact":["Expo app includes auth, onboarding, tabs, reminders, and shared-space features.","Node/Express API uses MongoDB, JWT, S3-compatible uploads, and rate-limit tests.","Includes a design system and deployment-ready marketing website."],"links":[{"label":"GitHub","url":"https://github.com/Rxddy/us-couples-app"}]},{"title":"GymSync","category":"Full-stack","source":"OneDrive CS","image":"images/gymsync-app.png","featured":true,"stack":["Node","Express","PostgreSQL","Docker","Jest"],"summary":"A fitness planning web app for routines, goals, workout tracking, and personalized fitness advice.","impact":["Docker-based local setup with a PostgreSQL backend.","Backend tests use Jest and Supertest.","Live project available at gymsync.ca."],"links":[{"label":"Live","url":"https://gymsync.ca/"}]},{"title":"Classic Bowl Website","category":"Frontend","source":"OneDrive CS","image":"images/classic-bowl-site.png","featured":true,"stack":["React","TypeScript","Vite","Routing"],"summary":"A student-built venue website for Classic Bowl with responsive pages and public content structure.","impact":["React + TypeScript SPA inside a dedicated web folder.","Uses route-based page structure and public assets.","Built as an independent student project, not an official venue product."],"links":[{"label":"Live","url":"https://classicbowlview.netlify.app/"},{"label":"GitHub","url":"https://github.com/Rxddy/Classic-Bowl"}]},{"title":"TastyGo","category":"Full-stack","source":"OneDrive CS","image":"images/Tasty-Go-Preview.png","featured":false,"stack":["HTML","CSS","JavaScript","Express","MongoDB"],"summary":"A food delivery application with frontend ordering flows and a Node/Mongo backend.","impact":["Includes authentication-oriented backend dependencies.","Uses Google Maps through a separate env file instead of committing an API key.","Good example of turning a plain web app into a fuller product flow."],"links":[{"label":"Live","url":"https://rxddy.github.io/TastyGo/"},{"label":"GitHub","url":"https://github.com/Rxddy/TastyGo"}]},{"title":"Workplace Shift Management","category":"Full-stack","source":"OneDrive CS","image":"images/pong-game-preview.jpg","featured":false,"stack":["Node","Express","JavaScript"],"summary":"A scheduling and shift-management project focused on workplace coordination flows.","impact":["Backend package structure suggests API-driven scheduling work.","Useful proof of CRUD, coordination, and operational UI thinking.","A good candidate for future screenshots and deployment notes."],"links":[]},{"title":"Chat Application","category":"Full-stack","source":"OneDrive CS","image":"","featured":false,"stack":["React","Node","Express","Python"],"summary":"A chat app with separate frontend and backend folders for real-time communication practice.","impact":["Shows client/server project structure.","Useful for Socket.IO or API messaging patterns.","Good baseline for auth, rooms, and message persistence improvements."],"links":[{"label":"GitHub","url":"https://github.com/Rxddy/Chat-Application"}]},{"title":"Email Spam Remover","category":"Automation","source":"OneDrive CS","image":"images/email-spam-remover.png","featured":false,"stack":["Python","Automation"],"summary":"A Python utility project for cleaning up unwanted email and automating repetitive inbox work.","impact":["Practical scripting around a real annoyance.","Shows comfort building utilities outside web-only work.","A good future candidate for OAuth and safer dry-run handling."],"links":[]},{"title":"Asteroid Destroyer","category":"Games","source":"OneDrive CS","image":"images/asteroid-game-preview.png","featured":false,"stack":["Python","Game Dev","Desktop"],"summary":"A retro-style space shooter with packaged Windows builds and game assets.","impact":["Includes game loop, assets, sound, and build outputs.","Shows Python beyond scripts and automation.","Paired with a separate website project for presentation."],"links":[{"label":"GitHub","url":"https://github.com/Rxddy/Asteroid-Destroyer-Game"}]},{"title":"Asteroid Destroyer Website","category":"Frontend","source":"OneDrive CS","image":"images/asteroid-website-preview.png","featured":false,"stack":["HTML","CSS","JavaScript","GitHub Pages"],"summary":"A promotional website for the Asteroid Destroyer game project.","impact":["Demonstrates project marketing and release presentation.","Uses static web deployment patterns.","Connects a playable desktop project to a public web presence."],"links":[{"label":"GitHub","url":"https://github.com/Rxddy/Asteroid-Destroyer-Website"}]},{"title":"Study Buddy","category":"Frontend","source":"OneDrive CS","image":"images/study-buddy-preview.png","featured":false,"stack":["HTML","CSS","JavaScript"],"summary":"A responsive study timer and motivation web app with custom interactions and a student-friendly workflow.","impact":["Includes timer, motivational prompts, and responsive layout.","Good proof of beginner-to-intermediate DOM interaction.","Clear candidate for future local storage and analytics upgrades."],"links":[{"label":"GitHub","url":"https://github.com/Rxddy/Study-Buddy"}]},{"title":"Fabric Mod","category":"Systems","source":"OneDrive CS","image":"","featured":false,"stack":["Java","Gradle","Minecraft Fabric"],"summary":"A Java/Gradle Minecraft Fabric mod project with source and build configuration.","impact":["Shows Java project structure outside class assignments.","Uses Gradle and modding APIs.","Good systems-style proof of reading framework docs and building against an engine."],"links":[{"label":"GitHub","url":"https://github.com/Rxddy/1.20.4FabricMod"}]},{"title":"Pokemon Running App","category":"Frontend","source":"OneDrive CS","image":"","featured":false,"stack":["React","Vite","Supabase"],"summary":"A running-themed web app project with React/Vite structure and Supabase signals in dependencies.","impact":["Shows newer frontend tooling and component structure.","Good candidate for database-backed progress features.","Needs a public screenshot before being promoted to featured."],"links":[]},{"title":"Buzzer Hub","category":"Mobile","source":"OneDrive CS","image":"","featured":false,"stack":["iOS","Watch App","Server"],"summary":"An iOS and watch-focused buzzer project with a companion server structure.","impact":["Covers Apple app structure and watch companion concepts.","Includes server-side pieces for coordination.","Useful proof of experimenting beyond browser-only apps."],"links":[]},{"title":"AI Calendar App","category":"Mobile","source":"OneDrive CS","image":"","featured":false,"stack":["iOS","Swift","Calendar"],"summary":"An iOS calendar app project exploring schedule UI and AI-assisted planning ideas.","impact":["Shows native app experimentation.","Calendar projects create useful constraints around dates and reminders.","Good future candidate for App Intents or notification work."],"links":[]},{"title":"Food Search Application","category":"Full-stack","source":"OneDrive CS","image":"","featured":false,"stack":["JavaScript","Python","Java","Node"],"summary":"A food search project with mixed-language signals and package structure.","impact":["Shows experimentation across multiple stacks.","Good candidate for API search, filtering, and data-source cleanup.","Needs repo notes and screenshot polish before public promotion."],"links":[]},{"title":"SAEC Website","category":"Frontend","source":"OneDrive CS","image":"","featured":false,"stack":["HTML","CSS","JavaScript"],"summary":"A static website project from the local CS project folder.","impact":["Shows plain frontend fundamentals.","Good candidate for responsive cleanup and accessibility pass.","Can be grouped with other brochure-style school projects."],"links":[]},{"title":"CP363 Website","category":"School","source":"OneDrive CS","image":"","featured":false,"stack":["HTML","CSS","Databases"],"summary":"A course website/project connected to database coursework.","impact":["Represents academic project delivery.","Pairs well with SQL practice and database folders.","Good place to add assignment context if public sharing is allowed."],"links":[]},{"title":"Game of Life","category":"Games","source":"OneDrive CS","image":"","featured":false,"stack":["JavaScript","Simulation"],"summary":"A Conway-style simulation project for practicing grids, state updates, and interactive UI behavior.","impact":["Useful algorithmic frontend exercise.","Naturally supports controls like speed, pause, and randomize.","Good candidate for a small embedded demo later."],"links":[]},{"title":"SQL Database Projects","category":"School","source":"OneDrive CS","image":"","featured":false,"stack":["SQL","Database Design"],"summary":"SQL practice and database coursework folders covering schema and query fundamentals.","impact":["Shows database literacy beyond frontend work.","Good supporting evidence for full-stack projects.","Could be improved with one clean schema diagram or query sample."],"links":[]},{"title":"WiFi Project","category":"Automation","source":"OneDrive CS","image":"","featured":false,"stack":["Python","Networking"],"summary":"A Python-oriented utility project around WiFi/networking tasks.","impact":["Shows interest in system utilities and local automation.","Good fit for a CLI safety and logging pass.","Needs documentation before public promotion."],"links":[]},{"title":"QR Code Utility","category":"Automation","source":"OneDrive CS","image":"","featured":false,"stack":["Utility","JavaScript"],"summary":"A small utility project for QR-code related workflows.","impact":["Good example of simple, useful single-purpose tooling.","Could become an embedded portfolio mini-tool.","Needs screenshot and README details before featuring."],"links":[]}];
+const categories=["All"].concat(Array.from(new Set(projects.map(function(p){return p.category;}))));
+const stackGroups=[{title:"Frontend",copy:"React, Vite, TypeScript, plain HTML/CSS/JS, responsive UI, routing, and interaction polish."},{title:"Backend",copy:"Node/Express APIs, MongoDB, PostgreSQL, Supabase, auth flows, and testable service structure."},{title:"Desktop and AI",copy:"Electron, Tauri, Rust backends, Ollama/FastAPI experiments, and local Windows automation."},{title:"School and Systems",copy:"Java/Gradle, SQL, Python simulations, database coursework, and small focused utilities."}];
+const state={filter:"All",query:"",spotlightIndex:0};
+const grid=document.querySelector("#project-grid"),filters=document.querySelector("#filter-row"),search=document.querySelector("#project-search"),status=document.querySelector("#result-status"),spotlight=document.querySelector("#spotlight"),dialog=document.querySelector("#project-dialog"),dialogContent=document.querySelector("#dialog-content"),progress=document.querySelector(".scroll-progress span"),navLinks=Array.from(document.querySelectorAll(".nav-links a")),reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function esc(value){return String(value).replace(/[&<>\"]/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch];});}
+function initials(title){return title.split(/\s+/).filter(Boolean).slice(0,2).map(function(word){return word.charAt(0);}).join("").toUpperCase();}
+function visual(project){if(project.image){return '<img src="'+esc(project.image)+'" alt="'+esc(project.title)+' preview" loading="lazy">';}return '<div class="generated-visual"><span>'+esc(initials(project.title))+'</span></div>';}
+function linkMarkup(project){return project.links.map(function(link){return '<a href="'+esc(link.url)+'" target="_blank" rel="noreferrer">'+esc(link.label)+'</a>';}).join("");}
+function matches(project){var query=state.query.trim().toLowerCase();var haystack=[project.title,project.category,project.source,project.summary].concat(project.stack).join(" ").toLowerCase();return (state.filter==="All"||project.category===state.filter)&&(!query||haystack.indexOf(query)!==-1);}
+function renderFilters(){filters.innerHTML=categories.map(function(category){return '<button type="button" class="'+(category===state.filter?'active':'')+'" data-filter="'+esc(category)+'" aria-pressed="'+(category===state.filter)+'">'+esc(category)+'</button>';}).join("");}
+function renderProjects(){var visible=projects.filter(matches);status.textContent='Showing '+visible.length+' of '+projects.length+' projects.';grid.innerHTML=visible.map(function(project,index){return '<article class="project-card reveal" style="transition-delay:'+Math.min(index*28,220)+'ms"><div class="project-thumb">'+visual(project)+'</div><div class="project-body"><div class="project-meta"><span>'+esc(project.category)+'</span><span class="source-tag">'+esc(project.source)+'</span></div><h3>'+esc(project.title)+'</h3><p>'+esc(project.summary)+'</p><div class="project-tags">'+project.stack.slice(0,4).map(function(item){return '<span>'+esc(item)+'</span>';}).join("")+'</div><div class="card-actions"><button type="button" data-detail="'+projects.indexOf(project)+'">Details</button>'+linkMarkup(project)+'</div></div></article>';}).join("");observeReveals();}
+function renderSpotlight(project){project=project||projects.find(function(item){return item.featured;})||projects[0];spotlight.innerHTML='<div class="spotlight-media">'+visual(project)+'</div><div class="spotlight-copy"><div class="project-meta"><span>'+esc(project.category)+'</span><span class="source-tag">'+esc(project.source)+'</span></div><h3>'+esc(project.title)+'</h3><p>'+esc(project.summary)+'</p><div class="tag-row">'+project.stack.map(function(item){return '<span>'+esc(item)+'</span>';}).join("")+'</div><div class="card-actions"><button type="button" data-detail="'+projects.indexOf(project)+'">Open Details</button>'+linkMarkup(project)+'</div></div>';}
+function renderStack(){document.querySelector("#stack-cards").innerHTML=stackGroups.map(function(group){return '<article class="stack-card reveal"><h3>'+esc(group.title)+'</h3><p>'+esc(group.copy)+'</p></article>';}).join("");document.querySelector("#signal-grid").innerHTML=[["Active folders","C:/Dev + OneDrive CS"],["Main style","Useful, interactive apps"],["Deployment","GitHub Pages / Netlify / local"],["Current push","More complete demos"]].map(function(row){return '<span><strong>'+esc(row[0])+'</strong>'+esc(row[1])+'</span>';}).join("");}
+function openDetails(index){var project=projects[index];if(!project)return;dialogContent.innerHTML='<div class="dialog-inner"><div class="project-thumb">'+visual(project)+'</div><div class="project-meta"><span>'+esc(project.category)+'</span><span class="source-tag">'+esc(project.source)+'</span></div><h2 id="dialog-title">'+esc(project.title)+'</h2><p>'+esc(project.summary)+'</p><div class="project-tags">'+project.stack.map(function(item){return '<span>'+esc(item)+'</span>';}).join("")+'</div><ul>'+project.impact.map(function(item){return '<li>'+esc(item)+'</li>';}).join("")+'</ul><div class="card-actions">'+(linkMarkup(project)||"<span class='source-tag'>Local/private project</span>")+'</div></div>';if(typeof dialog.showModal==="function")dialog.showModal();}
+function animateNumber(selector,target){var el=document.querySelector(selector);if(!el)return;if(reducedMotion){el.textContent=target;return;}var current=0,step=Math.max(1,Math.ceil(target/24));var timer=setInterval(function(){current=Math.min(target,current+step);el.textContent=current;if(current>=target)clearInterval(timer);},30);}
+function observeReveals(){var items=document.querySelectorAll(".reveal:not(.visible)");if(reducedMotion){items.forEach(function(item){item.classList.add("visible");});return;}var observer=new IntersectionObserver(function(entries,localObserver){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("visible");localObserver.unobserve(entry.target);}});},{threshold:.08,rootMargin:"0px 0px -8% 0px"});items.forEach(function(item){observer.observe(item);});}
+function initCanvas(){var canvas=document.querySelector("#hero-canvas");if(!canvas||reducedMotion)return;var ctx=canvas.getContext("2d");var points=Array.from({length:42},function(){return{x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.0007,vy:(Math.random()-.5)*.0007};});function size(){var rect=canvas.getBoundingClientRect();canvas.width=Math.max(1,Math.floor(rect.width*window.devicePixelRatio));canvas.height=Math.max(1,Math.floor(rect.height*window.devicePixelRatio));}function frame(){var w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.lineWidth=window.devicePixelRatio;points.forEach(function(point){point.x+=point.vx;point.y+=point.vy;if(point.x<0||point.x>1)point.vx*=-1;if(point.y<0||point.y>1)point.vy*=-1;});for(var i=0;i<points.length;i++){for(var j=i+1;j<points.length;j++){var a=points[i],b=points[j],dx=(a.x-b.x)*w,dy=(a.y-b.y)*h,dist=Math.sqrt(dx*dx+dy*dy),limit=150*window.devicePixelRatio;if(dist<limit){ctx.strokeStyle="rgba(61, 214, 179, "+(.18*(1-dist/limit))+")";ctx.beginPath();ctx.moveTo(a.x*w,a.y*h);ctx.lineTo(b.x*w,b.y*h);ctx.stroke();}}}points.forEach(function(point){ctx.fillStyle="rgba(242,184,75,.55)";ctx.beginPath();ctx.arc(point.x*w,point.y*h,2.2*window.devicePixelRatio,0,Math.PI*2);ctx.fill();});requestAnimationFrame(frame);}size();window.addEventListener("resize",size);frame();}
+function initInteractions(){filters.addEventListener("click",function(event){var button=event.target.closest("button[data-filter]");if(!button)return;state.filter=button.dataset.filter;renderFilters();renderProjects();});search.addEventListener("input",function(){state.query=search.value;renderProjects();});document.addEventListener("click",function(event){var detail=event.target.closest("[data-detail]");if(detail)openDetails(Number(detail.dataset.detail));});document.querySelector(".dialog-close").addEventListener("click",function(){dialog.close();});document.querySelector("#shuffle-featured").addEventListener("click",function(){var featured=projects.filter(function(project){return project.featured;});state.spotlightIndex=(state.spotlightIndex+1)%featured.length;renderSpotlight(featured[state.spotlightIndex]);});document.querySelector(".theme-toggle").addEventListener("click",function(){document.body.classList.toggle("light");localStorage.setItem("portfolio-theme",document.body.classList.contains("light")?"light":"dark");});document.querySelector(".nav-toggle").addEventListener("click",function(event){var links=document.querySelector("#nav-links");var open=links.classList.toggle("open");event.currentTarget.setAttribute("aria-expanded",String(open));});navLinks.forEach(function(link){link.addEventListener("click",function(){document.querySelector("#nav-links").classList.remove("open");});});window.addEventListener("scroll",function(){var max=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=(max>0?Math.min(100,window.scrollY/max*100):0)+"%";},{passive:true});var panel=document.querySelector(".hero-panel"),hero=document.querySelector(".hero");hero.addEventListener("pointermove",function(event){if(reducedMotion||!window.matchMedia("(hover: hover)").matches)return;var rect=event.currentTarget.getBoundingClientRect();panel.style.setProperty("--ry",(((event.clientX-rect.left)/rect.width-.5)*8)+"deg");panel.style.setProperty("--rx",(((event.clientY-rect.top)/rect.height-.5)*-8)+"deg");});hero.addEventListener("pointerleave",function(){panel.style.setProperty("--ry","0deg");panel.style.setProperty("--rx","0deg");});var focus=["React apps","AI tools","mobile builds","automation","game projects","database work"],focusIndex=0;if(!reducedMotion)setInterval(function(){focusIndex=(focusIndex+1)%focus.length;document.querySelector("#rotating-focus").textContent=focus[focusIndex];},2200);var sectionObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(!entry.isIntersecting)return;navLinks.forEach(function(link){link.classList.toggle("active",link.getAttribute("href")==="#"+entry.target.id);});});},{rootMargin:"-42% 0px -50% 0px"});document.querySelectorAll("main section[id]").forEach(function(section){sectionObserver.observe(section);});}
+if(localStorage.getItem("portfolio-theme")==="light")document.body.classList.add("light");renderFilters();renderStack();renderSpotlight();renderProjects();animateNumber("#metric-projects",projects.length);animateNumber("#metric-categories",categories.length-1);animateNumber("#metric-featured",projects.filter(function(project){return project.featured;}).length);observeReveals();initCanvas();initInteractions();
